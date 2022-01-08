@@ -1,7 +1,7 @@
 # sFCS_BTS
 
 Simulation and analysis code for scanning fluorescence correlation spectroscopy (sFCS) data. 
-This repository will accompany a manuscript describing the use of sFCS and brightness transit statistics (BTS) histograms to quantify biomolecular organisation.
+This repository will accompany a manuscript describing the use of sFCS and brightness transit statistics (BTS) histograms to quantify biomolecular organisation. Collaboration with the [Fritzsche Lab](https://www.bpi-oxford.com/). 
 
 ## The folder "Example_data" contains:
 
@@ -40,3 +40,22 @@ Some parts of the simulations and analysis were further developed or re-implemen
 
 Questions and comments welcome. 
 @faldalf
+
+
+
+## Technical details and requirements
+
+All scripts were written and executed under Python 3.7.7 in Spyder (4.1.5, conda version 4.10.3) on a Windows 10 (64-bit) laptop with an Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz and 16 GB RAM. 
+
+**Python dependencies**
+The following Python libraries are required to run the above scripts. The indicated versions were the ones used during initial realease of the repository. 
+
+- numpy 1.18.5
+- matplotlib 3.2.1 
+- scipy 1.5.2
+- pandas 1.1.3
+- tkinter (or rather tk) 8.6.10
+- tifffile 2020.6.3
+- multipletau 0.3.3
+- lmfit 1.0.1
+- ipyparallel 6.2.4

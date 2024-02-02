@@ -12,6 +12,8 @@
 #
 # Questions and feedback are welcome 
 #
+# Update 13/07/2023
+# - automatically saving the BTS Figure as png to filepath of last loaded file. 
 
 #%% Imports
 import os
@@ -43,7 +45,7 @@ def load_sFCS_data (samples):
     else:
         print ('Error: Can\'t read file format. Please provide .xlsx or .csv')
         
-    return data
+    return data, filename
     
 #%% Load data
 
@@ -54,7 +56,7 @@ data = {} # Predefine data dict
 simulation = False # Indicate if data are simulated (dealing with differences in naming of variables). For analysing experimental data keep False. 
 
 for i in range (0, len (samples)):
-    data [i] =  load_sFCS_data (samples[i])
+    data [i], filename =  load_sFCS_data (samples[i])
     if simulation: 
         data [i] = data[i].drop(data[i].index[-1]) 
         data[i]['txy1'] = data[i]['txy'].astype(float)
@@ -89,10 +91,17 @@ for data_set in data.keys ():
 plt.tight_layout()
 
 # Generating the LUT colorbar in a different figure. 
-plt.figure ()
-cbar1 = plt.colorbar(histo[3], format = "%.2f")
+fig2, axes = plt.subplots(nrows=1, ncols=1) 
+cbar1 = plt.colorbar(histo[3], ax=axes, format = "%.2f")
 cbar1.set_label (label = 'Probability (a.u.)', size = 14)
 cbar1.ax.tick_params (labelsize=14)
+
+# Split path and filename of last loaded file
+path = os.path.split (filename)
+
+# Save figures to folder of last loaded file
+fig1.savefig (path[0]+'\\\\BTS-Histogram.png', format = 'png')
+fig2.savefig (path[0]+'\\\\Colorbar.png', format = 'png')
 
 
 #%% Generate transit time histogram. 

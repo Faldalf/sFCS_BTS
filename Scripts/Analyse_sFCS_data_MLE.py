@@ -217,7 +217,7 @@ fig_path = filepath+'BIC.png'
 fig.savefig(fig_path, bbox_inches='tight')
 
 print ("\n", "Relative Likelihood (free diffusion)", results['RL_LogN'], "\n", "Relative Likelihood (hindered diffusion) ", results['RL_dLogN']) # Let's print out the RL values. 
-
+print (results ['RL_dLogN'], '\n', results ['RL_LogN'], '\n',results ['RL_Gauss'], '\n',)
 
 
 

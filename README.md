@@ -42,7 +42,7 @@ Script to statistically analyse transit time data and reveal the underlying Brow
 - "Compare2BTS_datasets.py"
 
 Script to statistically compare two BTS datasets, e.g., control versus treated. The files should be loaded as above as excel sheet or .csv file. Transit time data should be given as a column named 'txy1' and brightness as a column 'cpm (kHz)'. Plot parameters can be user-adjusted. The script calculates the Battacharyya distance as metric for the difference between the two conditions. The data is then concatenated, permutated, and subsampled numerous times (bootstrapping approach) to create a null distribution of Battacharyya distances. Comparing the Battacharyya distance between the conditions and the null distribution allows to calculate a p-value to indicate if the two conditions were likely from the same underlying distribution. A p-value < 0.01 indicates a significant difference between the two input BTS histograms. 
-The analysis was inspired by [this approach] (https://thenode.biologists.com/user-friendly-p-values/research/). 
+The analysis was inspired by [this approach](https://thenode.biologists.com/user-friendly-p-values/research/). 
 
 
 All scripts contain further information on functionality, input and output parameters. 

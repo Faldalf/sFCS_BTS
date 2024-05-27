@@ -69,3 +69,7 @@ The following Python libraries are required to run the above scripts. The indica
 - multipletau 0.3.3
 - lmfit 1.0.1
 - ipyparallel 6.2.4
+
+No installation of the repository is required. 
+Run time for the analysis scripts is < 1 min. 
+Simulating data can take hours depending on number of repeats and number of molecules as well as computer specification and number CPU cores utilized. 
